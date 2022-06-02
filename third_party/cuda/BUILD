@@ -14,7 +14,7 @@ cc_library(
             "lib/x64/cudart.lib",
         ],
         "//conditions:default": [
-            "lib64/libcudart.so",
+            "lib/libcudart.so",
         ],
     }),
     hdrs = glob([
@@ -44,7 +44,7 @@ cc_library(
             "bin/*.dll",
         ],
         "//conditions:default": glob([
-            "lib64/**/lib*.so",
+            "lib/**/lib*.so",
         ]),
     }),
     hdrs = glob([
@@ -63,7 +63,7 @@ cc_library(
             "lib/x64/cublas.lib",
         ]),
         "//conditions:default": glob([
-            "lib64/**/*libcublas.so",
+            "lib/**/*libcublas.so",
         ]),
     }),
     hdrs = glob([
