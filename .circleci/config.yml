@@ -86,7 +86,16 @@ jobs:
             popd
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+# workflows:
+#   build_run:
+#     jobs:
+#       - build
 workflows:
-  build_run:
+  generate-config:
     jobs:
-      - build
+      - path-filtering/filter:
+          base-revision: main
+          config-path: .circleci/continue-config.yml
+          mapping: |
+            src/.* build true
+            doc/.* build true
